@@ -1,0 +1,32 @@
+\hypertarget{sleeprating_8py}{}\section{sleeprating.\+py File Reference}
+\label{sleeprating_8py}\index{sleeprating.\+py@{sleeprating.\+py}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacesleeprating}{sleeprating}}
+\item 
+ \mbox{\hyperlink{namespacedocstring}{docstring}}
+\begin{DoxyCompactList}\small\item\em Documentation for Sleep Analysis Algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesleeprating_a0d156bb774e867fc8ebea212853bd312}{sleeprating.\+a}} = genfromtxt(\textquotesingle{}data/example\+\_\+data.\+csv\textquotesingle{}, delimiter=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Read data from csv file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesleeprating_a0daef533b07f6252a2dad70552a90082}{sleeprating.\+b}} = a\mbox{[}\+:,1\mbox{]}
+\begin{DoxyCompactList}\small\item\em Get sleep phase column. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesleeprating_a9e349b9812b2428e147dc1612fa5126d}{sleeprating.\+ideal\+Sleep\+Data}} = np.\+delete(b,0)
+\begin{DoxyCompactList}\small\item\em Remove title row containing \char`\"{}\+Phase\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesleeprating_a69adab626860ce563388eca964e80eb0}{sleeprating.\+real\+Sleep\+Data}} = np.\+delete(b,0)
+\begin{DoxyCompactList}\small\item\em Last nights data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesleeprating_abe9d10de2c37eaa74afd164d3121680c}{sleeprating.\+CC}} = np.\+correlate(ideal\+Sleep\+Data,real\+Sleep\+Data)
+\begin{DoxyCompactList}\small\item\em Compare the data CC\+: 573 (Exactly the same) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesleeprating_aab6cbcbccfa89f1cdeedee015ea70002}{sleeprating.\+dataA}} = np.\+sum(np.\+square(ideal\+Sleep\+Data))
+\begin{DoxyCompactList}\small\item\em Calculate normalized cross correlation x squared. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesleeprating_ab660d30857a5b0d3afabc6a91d7b24e2}{sleeprating.\+dataB}} = np.\+sum(np.\+square(real\+Sleep\+Data))
+\begin{DoxyCompactList}\small\item\em Calculate normalized cross correlation y squared. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesleeprating_ab32193f6862474b22eb3867a4705ed42}{sleeprating.\+normalized\+CC}} = CC/np.\+sqrt(dataA$\ast$dataB)
+\begin{DoxyCompactList}\small\item\em 1 = exactly the same, -\/1 completely opposite CC / root(x$^\wedge$2 y$^\wedge$2) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacesleeprating_a11e97cac9b74432fdff92d0cb7e069ef}{sleeprating.\+output}} = normalized\+CC\mbox{[}0\mbox{]}$\ast$10
+\begin{DoxyCompactList}\small\item\em Adjust normalized value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesleeprating_add5fbadc2a13bb8abfecdd2f4523ffe4}{sleeprating.\+f}} = open(\textquotesingle{}data/sleeprating.\+txt\textquotesingle{}, \textquotesingle{}w\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Write to txt file. \end{DoxyCompactList}\end{DoxyCompactItemize}
