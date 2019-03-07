@@ -1,0 +1,18 @@
+Screen /dev/tty.SLAB_USBtoUART 115200
+
+from machine import Pin,I2C
+
+i2cport = I2C(scl=Pin(5), sda=Pin(4), freq=100000)
+
+i2cport.writeto(24, bytearray([0xf3]))
+
+data=i2cport.readfrom(24,2)
+
+int.from_bytes(data,'big')
+
+i2c.writeto_mem(0x18, 0x20, 0x9f)
+
+i2c.writeto_mem(0x18, 0x20, bytearray([0x9f]))
+
+
+Screen /dev/tty.SLAB_USBtoUART 115200

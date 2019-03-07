@@ -1,0 +1,40 @@
+Screen /dev/tty.SLAB_USBtoUART 115200
+
+from machine import Pin,I2C
+
+i2c = I2C(scl=Pin(5), sda=Pin(4), freq=100000)
+
+i2c.writeto_mem(0x18, 0x20, bytearray([0x3f])) #//CTRL_REG1 3f->00111111  0011->25hz freq, low-power mode enable xyz axis
+i2c.writeto_mem(0x18, 0x21, bytearray([0x09])) #//CTRL_REG2 00001001 00->normal mode,reset by read 0x26;  00->cutoff freq; 1->data from internal filter to fifo and output reg; 0->filter bypassed; 0->bypassed; 1 on interrput 1 enabled 
+i2c.writeto_mem(0x18, 0x22, bytearray([0x40])) #//CTRL_REG3 01000000 0->interrupt on INT1; 1->ENABLE IA1 interrput; disable other interrupt
+i2c.writeto_mem(0x18, 0x23, bytearray([0x00])) #//CTRL_REG4 continus update, Big endian, disabled high-resolution & self-test, use 4wire interface
+i2c.writeto_mem(0x18, 0x24, bytearray([0x08])) #//CTRL_REG5 00001000
+i2c.writeto_mem(0x18, 0x32, bytearray([0x10])) #//INT1_TH  =  16*16mg  设置中断阈值
+i2c.writeto_mem(0x18, 0x33, bytearray([0x00])) #//INT_DURATION 中断持续时间设置为0，因为已经设置中断锁存，所以中断不会消失，直到手动清除中断
+
+i2c.readfrom_mem(0x18,0x26,6) #reference  第一次虚读reference寄存器，强制将高通滤波器的值加载到当前加速度值,从这时开始比较了。
+
+i2c.writeto_mem(0x18, 0x30, bytearray([0x2A])
+
+i2c.readfrom_mem(0x18,0x31,8)
+
+i2c.readfrom_mem(0x18,0x2A,1)
+i2c.readfrom_mem(0x18,0x2B,1)
+
+
+
+
+
+
+i2cport.writeto(24, bytearray([0xf3]))
+
+data=i2cport.readfrom(24,2)
+
+int.from_bytes(data,'big')
+
+i2c.writeto_mem(0x18, 0x20, 0x9f)
+
+i2c.writeto_mem(0x18, 0x20, bytearray([0x9f]))
+
+
+Screen /dev/tty.SLAB_USBtoUART 115200
