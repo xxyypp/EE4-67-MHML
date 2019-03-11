@@ -1,21 +1,21 @@
 digraph Tree {
 node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
 edge [fontname=helvetica] ;
-0 [label=<X<SUB>0</SUB> &le; 45.0<br/>gini = 0.797<br/>samples = 72<br/>value = [12, 15, 16, 13, 16]<br/>class = Level 3>, fillcolor="#39e5c500"] ;
-1 [label=<X<SUB>0</SUB> &le; -15.0<br/>gini = 0.747<br/>samples = 56<br/>value = [12, 15, 16, 13, 0]<br/>class = Level 3>, fillcolor="#39e5c506"] ;
+0 [label=<X<SUB>0</SUB> &le; 45.0<br/>gini = 0.648<br/>samples = 72<br/>value = [16, 28, 28]<br/>class = Level 2>, fillcolor="#39e58100"] ;
+1 [label=<X<SUB>0</SUB> &le; -45.0<br/>gini = 0.622<br/>samples = 56<br/>value = [16, 28, 12]<br/>class = Level 2>, fillcolor="#39e5814c"] ;
 0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
-2 [label=<X<SUB>0</SUB> &le; -45.0<br/>gini = 0.494<br/>samples = 27<br/>value = [12, 15, 0, 0, 0]<br/>class = Level 2>, fillcolor="#7be53933"] ;
+2 [label=<gini = 0.0<br/>samples = 12<br/>value = [0, 0, 12]<br/>class = Level 3>, fillcolor="#8139e5ff"] ;
 1 -> 2 ;
-3 [label=<gini = 0.0<br/>samples = 12<br/>value = [12, 0, 0, 0, 0]<br/>class = Level 1>, fillcolor="#e58139ff"] ;
-2 -> 3 ;
-4 [label=<gini = 0.0<br/>samples = 15<br/>value = [0, 15, 0, 0, 0]<br/>class = Level 2>, fillcolor="#7be539ff"] ;
-2 -> 4 ;
-5 [label=<X<SUB>0</SUB> &le; 15.0<br/>gini = 0.495<br/>samples = 29<br/>value = [0, 0, 16, 13, 0]<br/>class = Level 3>, fillcolor="#39e5c530"] ;
-1 -> 5 ;
-6 [label=<gini = 0.0<br/>samples = 16<br/>value = [0, 0, 16, 0, 0]<br/>class = Level 3>, fillcolor="#39e5c5ff"] ;
+3 [label=<X<SUB>0</SUB> &le; -15.0<br/>gini = 0.463<br/>samples = 44<br/>value = [16, 28, 0]<br/>class = Level 2>, fillcolor="#39e5816d"] ;
+1 -> 3 ;
+4 [label=<gini = 0.0<br/>samples = 15<br/>value = [0, 15, 0]<br/>class = Level 2>, fillcolor="#39e581ff"] ;
+3 -> 4 ;
+5 [label=<X<SUB>0</SUB> &le; 15.0<br/>gini = 0.495<br/>samples = 29<br/>value = [16, 13, 0]<br/>class = Level 1>, fillcolor="#e5813930"] ;
+3 -> 5 ;
+6 [label=<gini = 0.0<br/>samples = 16<br/>value = [16, 0, 0]<br/>class = Level 1>, fillcolor="#e58139ff"] ;
 5 -> 6 ;
-7 [label=<gini = 0.0<br/>samples = 13<br/>value = [0, 0, 0, 13, 0]<br/>class = Level 4>, fillcolor="#3c39e5ff"] ;
+7 [label=<gini = 0.0<br/>samples = 13<br/>value = [0, 13, 0]<br/>class = Level 2>, fillcolor="#39e581ff"] ;
 5 -> 7 ;
-8 [label=<gini = 0.0<br/>samples = 16<br/>value = [0, 0, 0, 0, 16]<br/>class = Level 5>, fillcolor="#e539c0ff"] ;
+8 [label=<gini = 0.0<br/>samples = 16<br/>value = [0, 0, 16]<br/>class = Level 3>, fillcolor="#8139e5ff"] ;
 0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
 }
