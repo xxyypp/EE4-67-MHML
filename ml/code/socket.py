@@ -1,7 +1,6 @@
-import socketio
 import json
 import decision_tree
-
+import socketio
 '''Edit ip address before use'''
 #ip = 'http://35.246.29.217:65080/' 
 #ip = 'http://146.169.173.109:65080/' 
