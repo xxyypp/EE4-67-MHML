@@ -1,5 +1,5 @@
 # Adaptive System & SocketIO communication protocol
-This repository contains both adaptive learning algorithms and SocketIO connection protocol. The structure of the folder is given that:
+This repository contains both adaptive learning algorithms and SocketIO connection protocol. The structure of the folder is given:
 * Folder __Adaptive Learning__ contains the source codes of adaptive alert level generation and apaptive notification time generation.
 
 * Folder __SocketIO__ contains the source code of SocketIO that has been used in Raspberry pi for communicating with the server.
