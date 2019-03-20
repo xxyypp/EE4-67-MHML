@@ -1,4 +1,4 @@
-# EE4-67-Machine-Learning-Code
+# Adaptive System & SocketIO communication protocols
 This repository contains both adaptive learning algorithms and SocketIO connection protocols. The structure of the folder is given that:
 * Folder __Adaptive Learning__ contains the source codes of adaptive alert level generation and apaptive notification time generation.
 
